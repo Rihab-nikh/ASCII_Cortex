@@ -44,7 +44,7 @@ export default function LoadGate({ onComplete }: LoadGateProps) {
             backgroundClip: 'text',
           }}
         >
-          INITIALIZING ALTAMIRA
+          INITIALIZING ASCII CORTEX
         </motion.h1>
 
         <div className="w-80 h-1 bg-[#0D0D1F] rounded-full overflow-hidden mx-auto">

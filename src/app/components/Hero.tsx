@@ -61,7 +61,7 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
             className="text-[clamp(4rem,18vw,16rem)] font-bold leading-[0.85] tracking-[-0.06em]"
           >
-            <span className="block text-[#EEF0FF]">ALTAMIRA</span>
+            <span className="block text-[#EEF0FF]">ASCII CORTEX</span>
           </motion.h1>
 
           <motion.h2

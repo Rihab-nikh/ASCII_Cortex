@@ -23,7 +23,7 @@ export default function Navigation() {
               backgroundClip: 'text',
             }}
           >
-            ALTAMIRA
+            ASCII CORTEX
           </span>
         </motion.div>
 

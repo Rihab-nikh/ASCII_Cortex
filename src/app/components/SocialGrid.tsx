@@ -47,7 +47,7 @@ export default function SocialGrid() {
             </span>
           </h2>
           <p className="text-xl text-[#7A7FA8]">
-            Insights, demos, and updates from the Altamira team
+            Insights, demos, and updates from the ASCII Cortex team
           </p>
         </motion.div>
 

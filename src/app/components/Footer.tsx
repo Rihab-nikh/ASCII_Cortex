@@ -205,10 +205,10 @@ export default function Footer() {
         <div className="pt-8 border-t border-[#7B2FFF]/20 flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="flex items-center gap-3">
             <Sparkles className="text-[#00C2FF]" size={24} />
-            <span className="text-[#EEF0FF] font-bold text-xl">ALTAMIRA</span>
+            <span className="text-[#EEF0FF] font-bold text-xl">ASCII CORTEX</span>
           </div>
           <p className="text-[#7A7FA8] text-sm">
-            © 2026 Altamira AI. All rights reserved.
+            © 2026 ASCII Cortex. All rights reserved.
           </p>
         </div>
       </div>

@@ -1,4 +1,4 @@
-Here's a complete Figma-ready design & animation spec — the **Lando Norris site structure transplanted onto Altamira**, with a sci-fi blue/purple/violet palette:
+Here's a complete Figma-ready design & animation spec — the **Lando Norris site structure transplanted onto ASCII Cortex**, with a sci-fi blue/purple/violet palette:
 
 ---
 
@@ -22,7 +22,7 @@ Here's a complete Figma-ready design & animation spec — the **Lando Norris sit
 
 ## 🔤 TYPOGRAPHY
 
-- **Hero Display**: Ultra-condensed, all-caps — e.g. *Druk Wide*, *Neue Machina*, or *Space Grotesk Bold*. For words like `ALTAMIRA`, `AI AGENCY`, `ON MISSION`
+- **Hero Display**: Ultra-condensed, all-caps — e.g. *Druk Wide*, *Neue Machina*, or *Space Grotesk Bold*. For words like `ASCII CORTEX`, `AI AGENCY`, `ON MISSION`
 - **Sub-labels**: Tiny uppercase sans, `0.15–0.2em` tracking — for tags like `"AI-native since 2019"`, `"Proof of concept → Production"`
 - **Body**: Clean geometric sans — *Inter*, *DM Sans*, or *Geist*
 - **Quote / Pull text**: Large italic or bold, centered — for statements like *"We don't just solve problems — we uncover what AI can truly do."*
@@ -32,11 +32,11 @@ Here's a complete Figma-ready design & animation spec — the **Lando Norris sit
 ## 📐 PAGE STRUCTURE (mirroring LN's sections)
 
 ### 1. LOAD GATE
-Branded full-screen intro cover. Text: `"INITIALIZING ALTAMIRA"` with a pulsing violet progress bar or glitching scan-line effect. Fades out to reveal site.
+Branded full-screen intro cover. Text: `"INITIALIZING ASCII CORTEX"` with a pulsing violet progress bar or glitching scan-line effect. Fades out to reveal site.
 
 ### 2. HERO
 - Full-viewport, locked portrait on mobile: *"This is a vertical mission."*
-- Giant stacked type: `H1 = "ALTAMIRA"` / `H2 = "AI-Native Product & Solutions Agency"`
+- Giant stacked type: `H1 = "ASCII CORTEX"` / `H2 = "AI-Native Product & Solutions Agency"`
 - `"Next Project:"` pill badge → links to case studies (mirrors "Next Race")
 - Sub-label: `"AI-native since 2019"`
 - **Signature equivalent**: a glowing cyan circuit-trace SVG (self-drawing on load) — like a PCB line or neural network path, acting as the brand mark underline
@@ -132,7 +132,7 @@ Photo grid of LinkedIn posts, talks, demos, event coverage. Same masonry-style l
 
 ## 📱 MOBILE NOTES
 - Portrait lock with *"This is a vertical mission."* rotate prompt
-- `ALTAMIRA` renders as a custom SVG wordmark sized to mobile viewport width
+- `ASCII CORTEX` renders as a custom SVG wordmark sized to mobile viewport width
 - Touch "tap to lock" enables a dedicated swipe-through story mode
 
 ---
