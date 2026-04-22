@@ -13,7 +13,7 @@ const partners = [
 
 export default function PartnersMarquee() {
   return (
-    <section className="relative py-20 overflow-hidden bg-gradient-to-r from-[#7B2FFF] via-[#00C2FF] to-[#7B2FFF]">
+    <section className="relative py-20 overflow-hidden bg-[#0D0D1F]">
       {/* Top row - moving left */}
       <div className="relative flex whitespace-nowrap mb-8">
         <motion.div
@@ -29,7 +29,13 @@ export default function PartnersMarquee() {
           {[...partners, ...partners].map((partner, i) => (
             <div
               key={i}
-              className="text-5xl md:text-7xl font-bold text-white tracking-tight"
+              className="text-5xl md:text-7xl font-bold tracking-tight"
+              style={{
+                background: 'linear-gradient(135deg, #7B2FFF 0%, #00C2FF 100%)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text',
+              }}
             >
               {partner} •
             </div>
@@ -48,7 +54,13 @@ export default function PartnersMarquee() {
           {[...partners, ...partners].map((partner, i) => (
             <div
               key={`dup-${i}`}
-              className="text-5xl md:text-7xl font-bold text-white tracking-tight"
+              className="text-5xl md:text-7xl font-bold tracking-tight"
+              style={{
+                background: 'linear-gradient(135deg, #7B2FFF 0%, #00C2FF 100%)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text',
+              }}
             >
               {partner} •
             </div>
@@ -71,9 +83,9 @@ export default function PartnersMarquee() {
           {[...partners, ...partners].map((partner, i) => (
             <div
               key={i}
-              className="text-5xl md:text-7xl font-bold text-white/20 tracking-tight"
+              className="text-5xl md:text-7xl font-bold tracking-tight"
               style={{
-                WebkitTextStroke: '2px rgba(255, 255, 255, 0.6)',
+                WebkitTextStroke: '2px rgba(123, 47, 255, 0.4)',
                 color: 'transparent',
               }}
             >
@@ -94,9 +106,9 @@ export default function PartnersMarquee() {
           {[...partners, ...partners].map((partner, i) => (
             <div
               key={`dup-${i}`}
-              className="text-5xl md:text-7xl font-bold text-white/20 tracking-tight"
+              className="text-5xl md:text-7xl font-bold tracking-tight"
               style={{
-                WebkitTextStroke: '2px rgba(255, 255, 255, 0.6)',
+                WebkitTextStroke: '2px rgba(123, 47, 255, 0.4)',
                 color: 'transparent',
               }}
             >

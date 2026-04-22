@@ -29,7 +29,7 @@ export default function SocialGrid() {
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 1, y: 0 }}
           transition={{ duration: 0.75 }}
           className="mb-16 text-center"
         >
@@ -58,7 +58,7 @@ export default function SocialGrid() {
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 40 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 1, y: 0 }}
                 transition={{ duration: 0.75, delay: index * 0.1 }}
                 className="group relative aspect-square rounded-2xl overflow-hidden border border-[#7B2FFF]/20 hover:border-[#00C2FF] transition-all duration-500 cursor-pointer"
               >

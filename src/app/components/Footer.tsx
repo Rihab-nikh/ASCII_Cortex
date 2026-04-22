@@ -52,45 +52,115 @@ export default function Footer() {
           </h3>
         </motion.div>
 
-        {/* Rotating orb visualization */}
-        <motion.div
-          animate={{ rotate: 360 }}
-          transition={{
-            duration: 20,
-            repeat: Infinity,
-            ease: 'linear',
-          }}
-          className="flex justify-center mb-16"
-        >
-          <div className="relative w-48 h-48">
+        {/* Rotating neural mesh orb */}
+        <motion.div className="flex justify-center mb-16">
+          <div className="relative w-64 h-64">
+            {/* Outer glow */}
             <motion.div
               animate={{
-                scale: [1, 1.1, 1],
-                opacity: [0.5, 0.8, 0.5],
+                scale: [1, 1.2, 1],
+                opacity: [0.3, 0.6, 0.3],
               }}
               transition={{
-                duration: 3,
+                duration: 4,
                 repeat: Infinity,
                 ease: 'easeInOut',
               }}
               className="absolute inset-0 rounded-full"
               style={{
                 background: 'radial-gradient(circle, #7B2FFF 0%, #00C2FF 100%)',
-                filter: 'blur(40px)',
+                filter: 'blur(60px)',
               }}
             />
+
+            {/* Rotating particle ring 1 */}
             <motion.div
-              animate={{
-                rotate: -360,
+              animate={{ rotate: 360 }}
+              transition={{
+                duration: 20,
+                repeat: Infinity,
+                ease: 'linear',
               }}
+              className="absolute inset-0"
+            >
+              {[...Array(8)].map((_, i) => (
+                <motion.div
+                  key={i}
+                  className="absolute w-3 h-3 rounded-full bg-[#00C2FF]"
+                  style={{
+                    left: '50%',
+                    top: '50%',
+                    transform: `rotate(${i * 45}deg) translateY(-80px)`,
+                    boxShadow: '0 0 12px rgba(0, 194, 255, 0.8)',
+                  }}
+                  animate={{
+                    scale: [1, 1.3, 1],
+                    opacity: [0.6, 1, 0.6],
+                  }}
+                  transition={{
+                    duration: 2,
+                    repeat: Infinity,
+                    delay: i * 0.1,
+                  }}
+                />
+              ))}
+            </motion.div>
+
+            {/* Rotating particle ring 2 */}
+            <motion.div
+              animate={{ rotate: -360 }}
               transition={{
                 duration: 15,
                 repeat: Infinity,
                 ease: 'linear',
               }}
+              className="absolute inset-0"
+            >
+              {[...Array(12)].map((_, i) => (
+                <motion.div
+                  key={i}
+                  className="absolute w-2 h-2 rounded-full bg-[#7B2FFF]"
+                  style={{
+                    left: '50%',
+                    top: '50%',
+                    transform: `rotate(${i * 30}deg) translateY(-60px)`,
+                    boxShadow: '0 0 8px rgba(123, 47, 255, 0.8)',
+                  }}
+                  animate={{
+                    scale: [1, 1.2, 1],
+                    opacity: [0.5, 0.9, 0.5],
+                  }}
+                  transition={{
+                    duration: 2.5,
+                    repeat: Infinity,
+                    delay: i * 0.08,
+                  }}
+                />
+              ))}
+            </motion.div>
+
+            {/* Center core */}
+            <motion.div
+              animate={{
+                rotate: 360,
+                scale: [1, 1.05, 1],
+              }}
+              transition={{
+                rotate: { duration: 10, repeat: Infinity, ease: 'linear' },
+                scale: { duration: 3, repeat: Infinity, ease: 'easeInOut' },
+              }}
               className="absolute inset-0 flex items-center justify-center"
             >
-              <Sparkles size={48} className="text-[#00C2FF]" />
+              <div className="relative">
+                <Sparkles size={64} className="text-[#00C2FF]" style={{ filter: 'drop-shadow(0 0 16px rgba(0, 194, 255, 0.9))' }} />
+                <motion.div
+                  animate={{ opacity: [0.5, 1, 0.5] }}
+                  transition={{ duration: 2, repeat: Infinity }}
+                  className="absolute inset-0 flex items-center justify-center"
+                >
+                  <div className="w-20 h-20 rounded-full border-2 border-[#7B2FFF]" />
+                </motion.div>
+              </div>
             </motion.div>
           </div>
         </motion.div>

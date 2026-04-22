@@ -19,42 +19,38 @@ export default function OnMissionOffMission() {
           {/* ON MISSION */}
           <motion.div
             initial={{ opacity: 0, y: 80 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="relative overflow-hidden"
+            className="relative"
           >
             <div className="mb-12">
-              <div className="overflow-hidden">
-                <motion.h2
-                  initial={{ y: '110%' }}
-                  animate={isInView ? { y: 0 } : {}}
-                  transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-                  className="text-6xl md:text-8xl font-bold text-[#EEF0FF] leading-none"
-                >
-                  ON
-                </motion.h2>
-              </div>
-              <div className="overflow-hidden">
-                <motion.h2
-                  initial={{ y: '110%' }}
-                  animate={isInView ? { y: 0 } : {}}
-                  transition={{ duration: 0.8, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
-                  className="text-6xl md:text-8xl font-bold leading-none"
-                  style={{
-                    background: 'linear-gradient(135deg, #7B2FFF 0%, #00C2FF 100%)',
-                    WebkitBackgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent',
-                    backgroundClip: 'text',
-                  }}
-                >
-                  MISSION
-                </motion.h2>
-              </div>
+              <motion.h2
+                initial={{ opacity: 0, y: 40 }}
+                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+                className="text-6xl md:text-8xl font-bold text-[#EEF0FF] leading-none"
+              >
+                ON
+              </motion.h2>
+              <motion.h2
+                initial={{ opacity: 0, y: 40 }}
+                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
+                className="text-6xl md:text-8xl font-bold leading-none"
+                style={{
+                  background: 'linear-gradient(135deg, #7B2FFF 0%, #00C2FF 100%)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  backgroundClip: 'text',
+                }}
+              >
+                MISSION
+              </motion.h2>
             </div>
 
             <motion.div
               initial={{ opacity: 0 }}
-              animate={isInView ? { opacity: 1 } : {}}
+              animate={isInView ? { opacity: 1 } : { opacity: 1 }}
               transition={{ duration: 0.75, delay: 0.5 }}
               className="space-y-6 text-[#7A7FA8]"
             >
@@ -85,42 +81,38 @@ export default function OnMissionOffMission() {
           {/* OFF MISSION */}
           <motion.div
             initial={{ opacity: 0, y: 80 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-            className="relative overflow-hidden"
+            className="relative"
           >
             <div className="mb-12">
-              <div className="overflow-hidden">
-                <motion.h2
-                  initial={{ y: '110%' }}
-                  animate={isInView ? { y: 0 } : {}}
-                  transition={{ duration: 0.8, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
-                  className="text-6xl md:text-8xl font-bold text-[#EEF0FF] leading-none"
-                >
-                  OFF
-                </motion.h2>
-              </div>
-              <div className="overflow-hidden">
-                <motion.h2
-                  initial={{ y: '110%' }}
-                  animate={isInView ? { y: 0 } : {}}
-                  transition={{ duration: 0.8, delay: 0.45, ease: [0.16, 1, 0.3, 1] }}
-                  className="text-6xl md:text-8xl font-bold leading-none"
-                  style={{
-                    background: 'linear-gradient(135deg, #00C2FF 0%, #7B2FFF 100%)',
-                    WebkitBackgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent',
-                    backgroundClip: 'text',
-                  }}
-                >
-                  MISSION
-                </motion.h2>
-              </div>
+              <motion.h2
+                initial={{ opacity: 0, y: 40 }}
+                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
+                className="text-6xl md:text-8xl font-bold text-[#EEF0FF] leading-none"
+              >
+                OFF
+              </motion.h2>
+              <motion.h2
+                initial={{ opacity: 0, y: 40 }}
+                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.45, ease: [0.16, 1, 0.3, 1] }}
+                className="text-6xl md:text-8xl font-bold leading-none"
+                style={{
+                  background: 'linear-gradient(135deg, #00C2FF 0%, #7B2FFF 100%)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  backgroundClip: 'text',
+                }}
+              >
+                MISSION
+              </motion.h2>
             </div>
 
             <motion.div
               initial={{ opacity: 0 }}
-              animate={isInView ? { opacity: 1 } : {}}
+              animate={isInView ? { opacity: 1 } : { opacity: 1 }}
               transition={{ duration: 0.75, delay: 0.7 }}
               className="space-y-6 text-[#7A7FA8]"
             >

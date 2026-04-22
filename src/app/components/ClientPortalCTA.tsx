@@ -17,13 +17,13 @@ export default function ClientPortalCTA() {
       <div className="max-w-5xl mx-auto relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 1, y: 0 }}
           transition={{ duration: 0.75, ease: [0.16, 1, 0.3, 1] }}
           className="text-center"
         >
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
-            animate={isInView ? { opacity: 1, scale: 1 } : {}}
+            animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 1, scale: 1 }}
             transition={{ duration: 0.75, delay: 0.2 }}
             className="mb-12"
           >
@@ -49,7 +49,7 @@ export default function ClientPortalCTA() {
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 1, y: 0 }}
             transition={{ duration: 0.75, delay: 0.4 }}
             className="flex flex-col sm:flex-row gap-6 justify-center items-center"
           >
@@ -77,27 +77,6 @@ export default function ClientPortalCTA() {
             </motion.button>
           </motion.div>
 
-          {/* Client logos placeholder */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={isInView ? { opacity: 1 } : {}}
-            transition={{ duration: 0.75, delay: 0.6 }}
-            className="mt-20 pt-12 border-t border-[#7B2FFF]/20"
-          >
-            <p className="text-sm uppercase tracking-widest text-[#7A7FA8] mb-8">
-              Trusted by Industry Leaders
-            </p>
-            <div className="flex flex-wrap justify-center items-center gap-12 opacity-50">
-              {['Enterprise A', 'Tech Corp', 'Global Inc', 'Innovation Co'].map((name) => (
-                <div
-                  key={name}
-                  className="text-xl font-bold text-[#EEF0FF]"
-                >
-                  {name}
-                </div>
-              ))}
-            </div>
-          </motion.div>
         </motion.div>
       </div>
     </section>

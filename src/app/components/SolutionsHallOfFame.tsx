@@ -1,6 +1,7 @@
 import { motion, useInView } from 'motion/react';
 import { useRef, useState } from 'react';
 import { Brain, MessageSquare, Eye, Lightbulb, Database, Cpu } from 'lucide-react';
+import { ImageWithFallback } from './figma/ImageWithFallback';
 
 const solutions = [
   {
@@ -9,6 +10,8 @@ const solutions = [
     metric: '85% task automation',
     icon: Brain,
     gradient: 'from-violet-500 to-purple-600',
+    baseImage: 'https://images.unsplash.com/photo-1761740533449-b8d4385e60b0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
+    hoverImage: 'https://images.unsplash.com/photo-1765046255517-412341954c4c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
   },
   {
     name: 'Chatbots',
@@ -16,6 +19,8 @@ const solutions = [
     metric: '1M+ conversations/month',
     icon: MessageSquare,
     gradient: 'from-purple-500 to-blue-600',
+    baseImage: 'https://images.unsplash.com/photo-1762330465857-07e4c81c0dfa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
+    hoverImage: 'https://images.unsplash.com/photo-1676573408178-a5f280c3a320?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
   },
   {
     name: 'Computer Vision',
@@ -23,6 +28,8 @@ const solutions = [
     metric: '99.2% accuracy',
     icon: Eye,
     gradient: 'from-blue-500 to-cyan-600',
+    baseImage: 'https://images.unsplash.com/photo-1529042261946-1d09f5f87a33?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
+    hoverImage: 'https://images.unsplash.com/photo-1678845530864-18a666ca9762?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
   },
   {
     name: 'AI Consulting',
@@ -30,6 +37,8 @@ const solutions = [
     metric: '50+ enterprises guided',
     icon: Lightbulb,
     gradient: 'from-cyan-500 to-violet-600',
+    baseImage: 'https://images.unsplash.com/photo-1759884247160-27b8465544b6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
+    hoverImage: 'https://images.unsplash.com/photo-1716703432455-3045789de738?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
   },
   {
     name: 'PoC Development',
@@ -37,6 +46,8 @@ const solutions = [
     metric: '2-4 weeks to demo',
     icon: Cpu,
     gradient: 'from-violet-600 to-purple-500',
+    baseImage: 'https://images.unsplash.com/photo-1759752394755-1241472b589d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
+    hoverImage: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
   },
   {
     name: 'Data Intelligence',
@@ -44,6 +55,8 @@ const solutions = [
     metric: 'Real-time processing',
     icon: Database,
     gradient: 'from-purple-600 to-blue-500',
+    baseImage: 'https://images.unsplash.com/photo-1767163934854-655747a35068?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
+    hoverImage: 'https://images.unsplash.com/photo-1775709610612-c589e29679ea?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
   },
 ];
 
@@ -57,7 +70,7 @@ function SolutionCard({ solution, index }: { solution: typeof solutions[0]; inde
     <motion.div
       ref={ref}
       initial={{ opacity: 0, y: 60 }}
-      animate={isInView ? { opacity: 1, y: 0 } : {}}
+      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 1, y: 0 }}
       transition={{
         duration: 0.75,
         delay: index * 0.1,
@@ -68,18 +81,31 @@ function SolutionCard({ solution, index }: { solution: typeof solutions[0]; inde
       className="group relative cursor-pointer"
     >
       <div className="relative aspect-[4/5] rounded-2xl overflow-hidden border-2 border-[#7B2FFF]/20 hover:border-[#00C2FF] transition-all duration-700">
-        {/* Gradient background */}
-        <motion.div
-          animate={{
-            scale: isHovered ? 1.1 : 1,
-            opacity: isHovered ? 0.4 : 0.2,
-          }}
-          transition={{ duration: 0.75, ease: [0.16, 1, 0.3, 1] }}
-          className={`absolute inset-0 bg-gradient-to-br ${solution.gradient}`}
-        />
+        {/* Base image */}
+        <div className="absolute inset-0">
+          <ImageWithFallback
+            src={solution.baseImage}
+            alt={solution.name}
+            className="w-full h-full object-cover transition-opacity duration-500"
+            style={{ opacity: isHovered ? 0 : 1 }}
+          />
+        </div>
 
-        {/* Card background */}
-        <div className="absolute inset-0 bg-[#0D0D1F]/80 backdrop-blur-sm" />
+        {/* Hover image */}
+        <div className="absolute inset-0">
+          <ImageWithFallback
+            src={solution.hoverImage}
+            alt={`${solution.name} detail`}
+            className="w-full h-full object-cover transition-opacity duration-500"
+            style={{ opacity: isHovered ? 1 : 0 }}
+          />
+        </div>
+
+        {/* Gradient overlay */}
+        <div className={`absolute inset-0 bg-gradient-to-br ${solution.gradient} opacity-30`} />
+
+        {/* Card overlay */}
+        <div className="absolute inset-0 bg-[#0D0D1F]/50 backdrop-blur-[1px]" />
 
         {/* Icon */}
         <motion.div
@@ -155,7 +181,7 @@ export default function SolutionsHallOfFame() {
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 1, y: 0 }}
           transition={{ duration: 0.75, ease: [0.16, 1, 0.3, 1] }}
           className="mb-20"
         >

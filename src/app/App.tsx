@@ -11,6 +11,7 @@ import ClientPortalCTA from './components/ClientPortalCTA';
 import PartnersMarquee from './components/PartnersMarquee';
 import SocialGrid from './components/SocialGrid';
 import Footer from './components/Footer';
+import MobileRotatePrompt from './components/MobileRotatePrompt';
 
 export default function App() {
   const [loadingComplete, setLoadingComplete] = useState(false);
@@ -48,6 +49,7 @@ export default function App() {
 
   return (
     <>
+      <MobileRotatePrompt />
       {!loadingComplete && <LoadGate onComplete={() => setLoadingComplete(true)} />}
       <div className="bg-[#05050F] text-[#EEF0FF] min-h-screen">
         <Navigation />

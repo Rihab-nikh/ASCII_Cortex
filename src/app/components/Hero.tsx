@@ -59,7 +59,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 100 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="text-[clamp(4rem,15vw,14rem)] font-bold leading-[0.85] tracking-[-0.05em]"
+            className="text-[clamp(4rem,18vw,16rem)] font-bold leading-[0.85] tracking-[-0.06em]"
           >
             <span className="block text-[#EEF0FF]">ALTAMIRA</span>
           </motion.h1>
@@ -79,27 +79,37 @@ export default function Hero() {
             AI-NATIVE PRODUCT &<br />SOLUTIONS AGENCY
           </motion.h2>
 
-          {/* Circuit trace signature */}
+          {/* Circuit trace signature - complex PCB-style path */}
           <motion.svg
-            initial={{ pathLength: 0, opacity: 0 }}
-            animate={{ pathLength: 1, opacity: 1 }}
-            transition={{ duration: 1.2, delay: 0.8, ease: 'easeInOut' }}
-            width="200"
-            height="4"
-            viewBox="0 0 200 4"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.8 }}
+            width="300"
+            height="60"
+            viewBox="0 0 300 60"
             className="mx-auto my-8"
           >
             <motion.path
-              d="M 0 2 L 60 2 L 70 2 L 80 2 L 120 2 L 130 2 L 140 2 L 200 2"
+              initial={{ pathLength: 0 }}
+              animate={{ pathLength: 1 }}
+              transition={{ duration: 1.5, delay: 0.8, ease: 'easeInOut' }}
+              d="M 0 30 L 40 30 L 50 20 L 50 10 L 60 10 L 70 30 L 100 30 L 110 40 L 110 50 L 130 50 L 140 30 L 170 30 L 180 20 L 190 20 L 200 30 L 230 30 L 240 40 L 250 40 L 260 30 L 300 30"
               stroke="#00C2FF"
               strokeWidth="2"
               fill="none"
+              strokeLinecap="round"
+              strokeLinejoin="round"
               style={{
-                filter: 'drop-shadow(0 0 8px rgba(0, 194, 255, 0.8))',
+                filter: 'drop-shadow(0 0 12px rgba(0, 194, 255, 0.9))',
               }}
             />
-            <circle cx="70" cy="2" r="3" fill="#00C2FF" />
-            <circle cx="130" cy="2" r="3" fill="#00C2FF" />
+            <circle cx="50" cy="10" r="4" fill="#00C2FF" />
+            <circle cx="110" cy="50" r="4" fill="#00C2FF" />
+            <circle cx="190" cy="20" r="4" fill="#00C2FF" />
+            <circle cx="250" cy="40" r="4" fill="#00C2FF" />
+            <circle cx="70" cy="30" r="3" fill="#7B2FFF" opacity="0.8" />
+            <circle cx="140" cy="30" r="3" fill="#7B2FFF" opacity="0.8" />
+            <circle cx="200" cy="30" r="3" fill="#7B2FFF" opacity="0.8" />
           </motion.svg>
 
           <motion.p

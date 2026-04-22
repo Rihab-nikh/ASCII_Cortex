@@ -3,12 +3,12 @@ import { useRef } from 'react';
 
 export default function MessageSection() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.3 });
+  const isInView = useInView(ref, { once: true, amount: 0.2 });
 
   return (
     <section
       ref={ref}
-      className="relative py-32 px-8 bg-gradient-to-b from-[#05050F] to-[#0D0D1F] overflow-hidden"
+      className="relative py-32 px-8 bg-gradient-to-b from-[#05050F] to-[#0D0D1F] overflow-hidden animate-in"
     >
       {/* Background glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-[#7B2FFF]/10 rounded-full blur-[128px]" />
@@ -16,7 +16,7 @@ export default function MessageSection() {
       <div className="max-w-6xl mx-auto relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 1, y: 0 }}
           transition={{ duration: 0.75, ease: [0.16, 1, 0.3, 1] }}
           className="text-center mb-20"
         >
@@ -34,7 +34,7 @@ export default function MessageSection() {
 
         <motion.div
           initial={{ opacity: 0, y: 60 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 1, y: 0 }}
           transition={{ duration: 0.75, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
           className="grid grid-cols-1 md:grid-cols-3 gap-8"
         >
@@ -46,7 +46,7 @@ export default function MessageSection() {
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 40 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 1, y: 0 }}
               transition={{ duration: 0.75, delay: 0.3 + index * 0.1 }}
               className="relative group"
             >
